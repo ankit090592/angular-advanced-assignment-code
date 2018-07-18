@@ -58,7 +58,8 @@ export class AllCountriesComponent implements OnInit {
   public onClickLanguages: any = (event: any) => {
     this.selectedData.length = 0;
     this.filter.name = "language";
-    this.filter.value = event.target.innerText;
+    let temp = event.target.innerText;
+        this.filter.value = temp.replace(/\,/g,""); //to replace coma with nothing
     //To stop routing to home page after link click
     event.preventDefault();
 
@@ -84,7 +85,8 @@ export class AllCountriesComponent implements OnInit {
   public onClickCurrency: any = (event: any) => {
     this.selectedData.length = 0;
     this.filter.name = "currency"
-    this.filter.value = event.target.innerText;
+    let temp = event.target.innerText;
+        this.filter.value = temp.replace(/\,/g,""); //to replace coma with nothing
     //To stop routing to home page after link click
     event.preventDefault();
 
