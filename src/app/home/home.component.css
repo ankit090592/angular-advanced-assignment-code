@@ -1,0 +1,156 @@
+
+/* Converted from SCSS as media queries were not working in SCSS */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:700);
+
+:root{
+  size: 16px;
+  font-size: 16px;  
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  
+}
+
+h1 {
+  margin-top: 3.4rem;
+  font-size: 2rem;
+  text-align: center;
+  font-family: Montserrat,sans-serif;
+  color: #fff;
+}
+
+.accordion {
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+}
+.accordion ul {
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+  margin: 0;
+  padding: 0;
+}
+.accordion ul li {
+  display: table-cell;
+  width: 20%;
+  height: 80vh;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  transition: all 500ms ease;
+}
+.accordion ul li div {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+}
+.accordion ul li div a {
+  display: block;
+  height: 80vh;
+  width: 100%;
+  padding: 15px 20px;
+  box-sizing: border-box;
+  color: #fff;
+  text-decoration: none;
+  font-family: Open Sans, sans-serif;
+  transition: all 200ms ease;
+}
+.accordion ul li div a * {
+  opacity: 0;
+  margin: 0;
+  width: 100%;
+  text-overflow: ellipsis;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-transform: translateX(-20px);
+  transform: translateX(-20px);
+  -webkit-transition: all 400ms ease;
+  transition: all 400ms ease;
+}
+.accordion ul li div a h2 {
+  font-family: Montserrat,sans-serif;
+  text-overflow: clip;
+  font-size: 24px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+  top: 65vh;
+}
+.accordion ul li div a p {
+  top: 65vh;
+  font-size: 13.5px;
+}
+.accordion ul li:nth-child(1) {
+  background-image: url("https://image.freepik.com/free-vector/map-of-africa-in-flat-style_23-2147798737.jpg");
+}
+.accordion ul li:nth-child(2) {
+  background-image: url("https://image.freepik.com/free-vector/map-of-the-americas-with-dots_23-2147807670.jpg");
+}
+.accordion ul li:nth-child(3) {
+  background-image: url("https://image.freepik.com/free-vector/map-of-asia-in-flat-style_23-2147783037.jpg");
+}
+.accordion ul li:nth-child(4) {
+  background-image: url("https://image.freepik.com/free-vector/europe-map-background-with-dots_23-2147789340.jpg");
+}
+.accordion ul li:nth-child(5) {
+  background-image: url("http://www.jarvisisland.info/maps/oceania.gif");
+}
+.accordion ul:hover li {
+  width: 10% !important;
+}
+.accordion ul:hover li a * {
+  opacity: 0 !important;
+}
+.accordion ul:hover li:hover,
+.accordion ul li:focus, .accordion ul:focus-within li:focus {
+  width: 60% !important;
+}
+.accordion ul:hover li:hover a,
+.accordion ul li:focus a, .accordion ul:focus-within li:focus a {
+  background: rgba(0, 0, 0, 0.4);
+}
+.accordion ul:hover li:hover a *,
+.accordion ul li:focus a *, .accordion ul:focus-within li:focus a * {
+  opacity: 1 !important;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    margin: 0;
+    padding: 0;
+    margin-top: 3.3rem;
+  }
+  h1 {    
+    font-size: 1.5rem;  
+  }
+  
+  .accordion {
+    height: auto;
+  }
+  .accordion ul li, .accordion ul li:hover, .accordion ul li:focus, .accordion ul li:focus-within, .accordion ul:hover li, .accordion ul:hover li:hover, .accordion ul:hover li:focus, .accordion ul:hover li:focus-within, .accordion ul:focus li, .accordion ul:focus li:hover, .accordion ul:focus li:focus, .accordion ul:focus li:focus-within, .accordion ul:focus-within li, .accordion ul:focus-within li:hover, .accordion ul:focus-within li:focus, .accordion ul:focus-within li:focus-within {
+    display: table;
+    table-layout: fixed;
+    width: 100% !important;
+    -webkit-transition: none;
+    transition: none;
+  }
+}
+.about {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  color: #666;
+}
+.about a {
+  color: blue;
+  text-decoration: none;
+}
+.about a:hover {
+  text-decoration: underline;
+}

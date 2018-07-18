@@ -1,0 +1,149 @@
+<div class="container" *ngIf="selectedData">
+    <div class="row ml-1">
+        <div id="goBackBtn">
+            <i class="material-icons" (click)="goBackToPreviousPage()">
+                arrow_back
+            </i>
+        </div>
+    </div>
+
+    <div *ngFor="let data of selectedData ">
+        <div class="row mb-4 info-main">
+            <div class="col-12 col-sm-12 col-md-6 flag">
+                <img class="img-responsive country-flag" src="{{data.flag}}" alt="Country Flag">
+            </div>
+            <div class="col-12 col-sm-12 col-md-6">
+                <div class="info-basic">
+                    Country: {{data.name}}
+                </div>
+                <div class="info-basic">
+                    Capital: {{data.capital}}
+                </div>
+                <div class="info-basic">
+                    Region: {{data.region}}
+                </div>
+                <div class="info-basic" *ngIf="data.languages.length!=undefined && data.languages.length>0">
+                    <span *ngFor="let language of data.languages; let first=first; let last=last">Languages:{{language.name}}{{last ? '' : ', '}}
+                    </span>
+                </div>
+                <div class="info-basic" *ngIf="data.currencies.length!=undefined && data.currencies.length>0">
+                    <span *ngFor="let currency of data.currencies; let first=first; let last=last">
+                        Currencies:{{currency.name}}{{last ? '' : ', '}}
+                    </span>
+                </div>
+                <div class="info-basic">
+                    Demonym: {{data.demonym}}
+                </div>
+                <div class="info-basic">
+                    Timezone: {{data.timezones}}
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row text-center info-stats">
+            <div class="col-12 col-sm-12 col-md-3">
+                <div class="card mainBody">
+
+                    <div class="avatar">
+                        <img class="img-responsive" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRve6rer8BU1aqH01cve9_bI6VKPJdSH6Ccm7OWvs9WwPiCRY_"
+                            alt="population image">
+                    </div>
+                    <div class="title">
+                        Population
+                    </div>
+                    <div class="card-footer bottom">
+                        {{data.population}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-12 col-md-3">
+                <div class="card mainBody">
+
+                    <div class="avatar">
+                        <img class="img-responsive" src="http://www.sciencefriday.com/wp-content/uploads/2016/08/Artboard-1.png"
+                            alt="population image">
+                    </div>
+                    <div class="title">
+                        Area
+                    </div>
+                    <div class="card-footer bottom">
+                        {{data.area}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-12 col-md-3">
+                <div class="card mainBody">
+
+                    <div class="avatar">
+                        <img class="img-responsive" src="http://www.earthscienceeducation.org/Db-MapsCartographyRegions/GoogleEarth-GeographicGrid.jpg"
+                            alt="population image">
+                    </div>
+                    <div class="title">
+                        Coordinates
+                    </div>
+                    <div class="card-footer bottom">
+                        {{data.latlng}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-12 col-md-3">
+                <div class="card mainBody">
+
+                    <div class="avatar">
+                        <img class="img-responsive" src="https://cdn4.iconfinder.com/data/icons/weby-flat-phone/64/Phone-07-512.png"
+                            alt="population image">
+                    </div>
+                    <div class="title">
+                        Calling Codes
+                    </div>
+                    <div class="card-footer bottom" *ngIf="data.callingCodes.length!=undefined && data.callingCodes.length>0">
+                        <span *ngFor="let callingCode of data.callingCodes; let first=first; let last=last">
+                            {{callingCode}}{{last ? '' : ', '}}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row info-other">
+            <div class="accordion" id="accordionExample">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Other Information
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="info-basic">
+                                Subregion: {{data.subregion}}
+                            </div>
+                            <div class="info-basic">
+                                Alpha-2 Code: {{data.alpha2Code}}
+                            </div>
+                            <div class="info-basic">
+                                Alpha-3 Code: {{data.alpha3Code}}
+                            </div>
+                            <div class="info-basic">
+                                Gini: {{data.gini}}
+                            </div>
+                            <div class="info-basic">
+                                Numeric Code: {{data.numericCode}}
+                            </div>
+                            <div class="info-basic">
+                                Ccioc: {{data.cioc}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+<div class="container-fluid">
+    <div class="row ml-1">
+        <div id="goBackBtn">
+            <i class="material-icons" (click)="goBackToPreviousPage()">
+                arrow_back
+            </i>
+        </div>
+    </div>
+
+
+    <h4 *ngIf="filter.name=='' || filter.value=='' ; else elseBlock"> Click on language/currency to select filter</h4>
+     <ng-template class="style-filter" #elseBlock>
+            <h4> Selected filter: {{filter.name}} {{filter.value}} </h4>
+        </ng-template> 
+    <!-- <h4 *ngIf="filter!=undefined" >Selected filter: {{filter.name}} {{filter.value}}</h4> -->
+
+    <div class="row text-center" *ngIf="selectedData">
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 text-center" *ngFor="let data of selectedData ">
+
+            <div class="card mainBody">
+
+                <!-- <app-all-countries-shared
+            [flag]="data.flag" [countryName]="data.name" [capitalName]="data.capital" [languages]="data.languages" [currencies] = "data.currencies">
+            </app-all-countries-shared> -->
+
+                <img class="img-responsive" src="{{data.flag}}" alt="Country Flag">
+                <div class="avatar">
+                    <img class="img-responsive" src="http://cuckold-video.info/wp-content/uploads/2018/04/world-map-full-hd-wallpaper-copy-bwzze96.jpg" alt="Region Map">
+                </div>
+                <div class="info">
+                    <div class="title">Country: {{data.name}}
+                    </div>
+                    <div class="desc">Capital: {{data.capital}}</div>
+                    <p *ngIf="data.languages.length!=undefined && data.languages.length>0">
+                        Languages:
+                        <a (click)="onClickLanguages($event)" href='#' *ngFor="let language of data.languages; let first=first; let last=last">{{language.name}}{{last ? '' : ', '}} </a>
+                    </p>
+                    <p *ngIf="data.currencies.length!=undefined && data.currencies.length>0">
+                        Currency:
+                        <a (click)="onClickCurrency($event)" href='#' *ngFor="let currency of data.currencies; let first=first; let last=last">
+                        {{currency.name}}{{last ? '' : ', '}}</a>
+                    </p>
+                </div>
+
+                <div class="card-footer bottom">
+                    <button [routerLink]="['/single-country', data.name]" type="button" class="btn btn-default btn-sm">Details &raquo;</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="scrollToTop">
+        <i class="material-icons" (click)="scrollPageToTop()" id="scrollToTop">
+            arrow_upward
+        </i>
+    </div>
+
+</div>

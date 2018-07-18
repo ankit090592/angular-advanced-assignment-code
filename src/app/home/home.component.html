@@ -1,0 +1,15 @@
+
+<h1>Select a region</h1>
+<div class="accordion" *ngIf="regionNames">
+  <ul >
+    <li tabindex="1" *ngFor="let name of regionNames ">
+      <div>
+        <a [routerLink]="['/all-countries', name.continentName]" >
+          <h2>{{name.continentName}}</h2> 
+          <p>{{name.description}}</p>
+        </a>
+      </div>
+    </li>    
+  </ul>
+  
+</div>

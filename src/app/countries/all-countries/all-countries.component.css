@@ -1,0 +1,147 @@
+.container-fluid{
+    margin-top: 5rem;
+  }
+  
+   .justify-content-evenly{
+      justify-content: space-evenly;
+    }
+  
+    /* Create a simple card, and add the shadow for the initial state */
+    .card {
+      /* height: 10%; */
+      /* max-height: 100%;  */
+      margin: 0.5rem 0;
+      /* box-shadow: 0 1px 2px rgba(255, 255, 255, 0.938); */
+      transition: all 0.3s ease-in-out;
+      }
+  
+      /* Create the hidden pseudo-element */
+  /* include the shadow for the end state */
+      .card::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        border-radius: 5px;
+        box-shadow: 0 5px 15px rgba(255, 255, 255, 0.877);
+        transition: opacity 0.3s ease-in-out;
+      }
+  
+      /* Scale up the box */
+      .card:hover {
+        transform: scale(1.05, 1.05);
+        box-shadow: 0 5px 15px rgba(255, 255, 255, 0.925);
+      }
+  
+      /* Fade in the pseudo-element with the bigger shadow */
+  .card:hover::after {
+    opacity: 1;
+  }     
+  
+  #goBackBtn{
+    cursor: pointer;
+    padding: .5em;
+text-decoration: none;
+color: #ffffff;
+background-color: transparent;
+font-size: 20px;
+outline-style: none;
+  }
+  #goBackBtn:hover{
+    color: #000000;
+    background-color: #ffffff;
+  }
+
+  h4{
+    text-align: start;
+    color: #ffffff;    
+  }
+      
+      .card.mainBody {
+        height: 25rem; 
+        overflow: hidden;
+        background-color: rgba(92, 92, 92, 0.51);
+        }
+      
+      .card.mainBody img {
+        height: 40%; 
+        background-size: 100% 100%;
+      }
+  
+      .card.mainBody p {
+        color: #ffffff;
+        overflow: hidden;
+      text-overflow: ellipsis;
+      /* white-space: nowrap; */
+      }
+
+      .card.mainBody p a{
+      color: #fcd116;
+      }
+      
+      .card.mainBody .avatar {
+        position: relative;
+        top: -4rem;
+        margin-bottom: -4rem;
+      }
+      
+      .card.mainBody .avatar img {
+        width: 7rem;
+        height: 7rem;
+        max-width: 7rem;
+        max-height: 7rem;
+        -webkit-border-radius: 50%;
+           -moz-border-radius: 50%;
+                border-radius: 50%;
+                border: 5px solid rgba(255,255,255,0.5);
+      }
+      
+      /* .card.mainBody .info {
+        padding: 4px 8px 10px;
+      } */
+      
+      .card.mainBody .info .title {
+        margin-bottom: 4px;
+        font-size: 1.4rem;
+        line-height: 1;
+        color: #ffffff;
+        vertical-align: middle;
+        white-space: nowrap;
+        overflow: hidden;
+      text-overflow: ellipsis;
+      }
+      
+      .card.mainBody .info .desc {
+        white-space: nowrap;
+        overflow: hidden;
+        font-size: 1rem;
+        color: #ffffff;
+        text-overflow: ellipsis;
+      } 
+  
+      .card-footer bottom{
+        padding: 0 !important;
+        margin-bottom: 0;
+      }
+
+      .style-filter{
+        color: #ffffff;
+      }
+
+      #scrollToTop{
+        cursor: pointer;
+   position: fixed;
+   bottom: .5em;
+   scroll-behavior: smooth;
+   right: .5em;
+   padding: .5em;
+   text-decoration: none;
+   color: white;
+   background-color: rgba(0, 0, 0, 0.747);
+   font-size: 20px;
+   outline-style: none;
+      }
+  
+      
